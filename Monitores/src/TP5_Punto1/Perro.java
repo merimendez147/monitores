@@ -2,11 +2,11 @@ package TP5_Punto1;
 
 public class Perro implements Runnable {
 	Comedor comedero;
-	int turno;
+
 	
-	public Perro(Comedor c, int t){
+	public Perro(Comedor c){
 		comedero=c;
-		turno=t;
+
 	}
 	
 	private void comer(){
