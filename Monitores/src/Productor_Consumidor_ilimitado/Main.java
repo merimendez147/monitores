@@ -6,23 +6,19 @@ public class Main {
     	
         Buffer recurso = new Buffer();
 
-        Thread[] consumidores = new Thread[1];
+        Thread[] consumidores = new Thread[2];
         Thread[] productores = new Thread[3];
-
         for (int i = 0; i < consumidores.length; i++) {
             consumidores[i] = new Thread(new Consumidor("Consumidor " + i, recurso));
-
         }
         for (int i = 0; i < productores.length; i++) {
             productores[i] = new Thread(new Productor("Productor " + i, recurso));
-
-        }
-        for (int i = 0; i < productores.length; i++) {
-            productores[i].start();
-
         }
         for (int i = 0; i < consumidores.length; i++) {
             consumidores[i].start();
+        }
+        for (int i = 0; i < productores.length; i++) {
+            productores[i].start();
 
         }
 

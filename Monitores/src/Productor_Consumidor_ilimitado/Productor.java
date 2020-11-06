@@ -4,33 +4,28 @@ public class Productor implements Runnable {
 
     private String nombre;
     private Buffer recurso;
-    private int producto;
+   
 
     public Productor(String n, Buffer b) {
         nombre = n;
         recurso = b;
-        producto=0;
     }
     
-  /*  private int hacerProducto(){
+  private void hacerProducto(){
     	try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	producto++;
-    	return producto;
     }
-    */
+   
 
     public void run() {
         while (true) {
-        		recurso.producir(producto++);
-          
-
-            
-    }
+        		hacerProducto();
+        		recurso.producir();
+            }
 
     }
 }

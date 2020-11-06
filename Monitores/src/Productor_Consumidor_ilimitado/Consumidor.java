@@ -16,7 +16,6 @@ public class Consumidor implements Runnable {
     public void run() {
 
         while (true) {
-
             try {
                 recurso.consumir();
                 Thread.sleep(2000);

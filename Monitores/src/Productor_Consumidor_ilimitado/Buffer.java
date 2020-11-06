@@ -6,6 +6,7 @@ import java.util.concurrent.Semaphore;
 
 public class Buffer {
     private Semaphore mutex;
+    private int cantProductos=0;
     private Semaphore productoDisponible;
     Queue<String> buffer = new LinkedList<String>();
   
@@ -19,7 +20,7 @@ public class Buffer {
     	try {
 			productoDisponible.acquire();
 			mutex.acquire();
-			System.out.println("El consumidor consume el producto " + buffer.poll());
+			System.out.println("El consumidor consume el " + buffer.poll());
 			mutex.release();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -27,11 +28,11 @@ public class Buffer {
 		}
     }
     	
-    	 public void producir(int i){
+    	 public void producir(){
     		 try{
     				mutex.acquire();
-    				buffer.add("Producto"+i);
-    				System.out.println("El productor produce el producto Producto"+i);
+    				buffer.add("Producto"+cantProductos++);
+    				System.out.println("El productor produce el Producto"+cantProductos);
     				mutex.release();
     				productoDisponible.release();
     			} catch (InterruptedException e) {
