@@ -1,6 +1,7 @@
 package ProblemaSaludoAlFinal;
 
 public class TestSaludo {
+	
 	public static void main(String argv[]) {
 		String[] nombresEmpleados = { "Pablo", "Luis", "Andrea", "Pedro", "Paula" };
 		Saludo hola = new Saludo();
@@ -10,7 +11,6 @@ public class TestSaludo {
 			elPersonal[i] = new Thread(new Personal(hola, nombresEmpleados[i - 1]));
 		for (int i = 0; i < 6; i++)
 			elPersonal[i].start();
-		hola.aTrabajar();
-		
+		hola.aTrabajar();		
 	}
 }

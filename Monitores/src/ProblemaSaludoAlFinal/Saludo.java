@@ -3,7 +3,9 @@ package ProblemaSaludoAlFinal;
 import java.util.concurrent.Semaphore;
 
 public class Saludo {
-	Semaphore semSaludo=new Semaphore(0, true);
+	
+	private Semaphore semSaludo=new Semaphore(0, true);
+	
 	public void aTrabajar(){
 		try {
 			semSaludo.acquire(6);
