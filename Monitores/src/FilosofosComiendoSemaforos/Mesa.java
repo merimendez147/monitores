@@ -49,7 +49,7 @@ public class Mesa {
 	public void dejarTenedores(int idFilosofo){
 		tenedores[idFilosofo].release();
 		if (idFilosofo == cantidadTenedores) {
-			tenedores[1].release();
+			tenedores[0].release();
 
 		} else {
 			tenedores[idFilosofo + 1].release();
