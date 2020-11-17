@@ -18,8 +18,8 @@ public class Mesa {
 	private void tenedorDer(int t) {
 		try {
 			if (t == cantidadTenedores) {
-				tenedores[1].acquire();
-				System.out.println(Thread.currentThread().getName()+" tiene el tenedor 1");
+				tenedores[0].acquire();
+				System.out.println(Thread.currentThread().getName()+" tiene el tenedor 0");
 
 			} else {
 				tenedores[t + 1].acquire();
