@@ -47,6 +47,7 @@ public class Mesa {
 	}
 	
 	public void dejarTenedores(int idFilosofo){
+		System.out.println(Thread.currentThread().getName()+" soltó los dos tenedores.");
 		tenedores[idFilosofo].release();
 		if (idFilosofo == cantidadTenedores) {
 			tenedores[0].release();
@@ -54,7 +55,6 @@ public class Mesa {
 		} else {
 			tenedores[idFilosofo + 1].release();
 		}
-		System.out.println(Thread.currentThread().getName()+" soltó los dos tenedores.");
 	}
 	
 }
